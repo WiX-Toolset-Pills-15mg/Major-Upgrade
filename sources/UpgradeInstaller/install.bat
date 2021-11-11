@@ -1,0 +1,1 @@
+msiexec /i UpgradeInstaller.msi /l*vx install.log
