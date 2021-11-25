@@ -1,6 +1,10 @@
-# Upgrade Installer
+# Major Upgrade
 
 ## Description
+
+After the first release of our product, most likely, will be other reincarnations that will need to be deployed. How should we prepare our first installer and how to create our next version of the installer to handle the upgrade process?
+
+We will create a version 1.0.0.0 of the installer to be installed and then a version 2.0.0.0  
 
 First let's create an MSI installer for our application having version 1.0.0.0.
 
