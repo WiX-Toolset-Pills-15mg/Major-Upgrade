@@ -36,7 +36,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
         <MediaTemplate />
 
-        <Feature Id="ProductFeature" Title="Upgrade Installer" Level="1">
+        <Feature 
+            Id="ProductFeature" 
+            Title="Upgrade Installer"
+            Level="1">
+
             <ComponentGroupRef Id="FileComponents" />
         </Feature>
     </Product>
