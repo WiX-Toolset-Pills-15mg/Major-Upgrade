@@ -18,13 +18,68 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 
+<!--
+====================================================================================================
+START: Overview
+====================================================================================================
+
+This project demonstrates how to provide upgrade functionality to a simple installer.
+
+Actually, the WiX project template already includes the upgrade support.
+Let's see
+
+NEXT: Product.wxs
+
+-->
+
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+    <!--
+    ====================================================================================================
+    Step 1: The Product and its Id
+    ====================================================================================================
+    
+    In the context of Windows Installer, a product is a version of our application. Whenever we release
+    a new version of the application, for Windows Installer, that is a new product.
+    
+    The "Id" attribute uniquely identifies a product and, for each version we must generate a new id,
+    that's why we use the "*" to let WiX generate a new id at build time.
+    
+    NEXT: Product.wxs
+    -->
+
+    <!--
+    ====================================================================================================
+    Step 2: The "Version"
+    ====================================================================================================
+    
+    The "Version" attribute contains the version number. Each time a new version of our application is
+    released, we must also increment the version number of the installer.
+    
+    Note: The first three values are important.
+    
+    NEXT: Product.wxs
+    -->
+
+    <!--
+    ====================================================================================================
+    Step 3: The "UpgradeCode"
+    ====================================================================================================
+    
+    The "UpgradeCode" uniquely identifies our application and Windows Installer will use it to determine
+    if other versions are already present in the system.
+    
+    Therefore, the "UpgradeCode" must remain the same for all versions of the product. It will never be
+    changed.
+    
+    NEXT: Product.wxs
+    -->
 
     <Product
         Id="*"
         Name="Upgrade Installer - WiX Toolset Pill"
         Language="1033"
-        Version="1.0.0.0"
+        Version="2.0.0.0"
         Manufacturer="Dust in the Wind"
         UpgradeCode="6da0fe4e-4c88-4e10-a39e-dd7a4346de53">
 
@@ -33,16 +88,56 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             Compressed="yes"
             InstallScope="perMachine" />
 
+        <!--
+        ====================================================================================================
+        Step 4: The <MajorUpgrade> tag
+        ====================================================================================================
+        
+        Just by adding the <MajorUpgrade> tag, the installer gains the upgrade support. When installing a
+        new version of the product, the installer will detect that an older version is already installed in
+        the system (based on the UpgradeCode) and will uninstall it before installing the new version.
+        
+        NEXT: Product.wxs
+        -->
+
+        <!--
+        ====================================================================================================
+        Step 5: The "DowngradeErrorMessage"
+        ====================================================================================================
+        
+        By adding the "DowngradeErrorMessage" attribute, we prevent installing an older version if a newer
+        version is already installer in the system.
+        
+        Remove this attribute if downgrade is allowed.
+        
+        NEXT: Product.wxs
+        -->
+
         <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
         <MediaTemplate />
 
-        <Feature 
-            Id="ProductFeature" 
+        <Feature
+            Id="ProductFeature"
             Title="Upgrade Installer"
             Level="1">
 
             <ComponentGroupRef Id="FileComponents" />
         </Feature>
+
     </Product>
 
 </Wix>
+
+<!--
+====================================================================================================
+Step 6: Build two different versions
+====================================================================================================
+
+Set the "Product@Version = 1.0.0.0" and build.
+Keep the results in a directory called "UpgradeInstaller v1.0.0.0".
+
+Set the "Product@Version = 2.0.0.0" and build.
+Keep the results in a directory called "UpgradeInstaller v2.0.0.0".
+
+NEXT: install.bat
+-->

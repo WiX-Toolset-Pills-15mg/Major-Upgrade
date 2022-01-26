@@ -2,7 +2,9 @@
 ==============================================================================
 
 This file is part of the "Upgrade Installer" Pill.
-The pill demonstrates how to configure the MSI installer to support the upgrade process.
+
+The pill demonstrates how to configure the MSI installer to support the major
+upgrade process.
 
 For more details please chech the GitHub repository:
 https://github.com/WiX-Toolset-Pills-15mg/Upgrade-Installer

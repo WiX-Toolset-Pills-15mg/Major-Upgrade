@@ -23,7 +23,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <Fragment>
 
         <ComponentGroup Id="FileComponents" Directory="INSTALLFOLDER">
-            <Component>
+            <Component Id="DummyFileComponent">
                 <File Id="DummyFile"  Source="$(var.ProjectDir)dummy.txt" KeyPath="yes" />
             </Component>
         </ComponentGroup>
