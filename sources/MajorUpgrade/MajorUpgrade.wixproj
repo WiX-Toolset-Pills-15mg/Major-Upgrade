@@ -6,8 +6,9 @@
     <ProductVersion>3.10</ProductVersion>
     <ProjectGuid>6ac28539-bebd-43e0-920c-e5ea6fa2ce7d</ProjectGuid>
     <SchemaVersion>2.0</SchemaVersion>
-    <OutputName>UpgradeInstaller</OutputName>
+    <OutputName>MajorUpgrade</OutputName>
     <OutputType>Package</OutputType>
+    <Name>MajorUpgrade</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <OutputPath>bin\$(Configuration)\</OutputPath>

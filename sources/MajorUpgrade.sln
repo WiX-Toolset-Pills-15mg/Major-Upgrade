@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "UpgradeInstaller", "UpgradeInstaller\UpgradeInstaller.wixproj", "{6AC28539-BEBD-43E0-920C-E5EA6FA2CE7D}"
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "MajorUpgrade", "MajorUpgrade\MajorUpgrade.wixproj", "{6AC28539-BEBD-43E0-920C-E5EA6FA2CE7D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

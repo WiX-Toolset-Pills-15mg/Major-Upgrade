@@ -77,7 +77,7 @@ NEXT: Product.wxs
 
     <Product
         Id="*"
-        Name="Upgrade Installer - WiX Toolset Pill"
+        Name="Major Upgrade - WiX Toolset Pill"
         Language="1033"
         Version="2.0.0.0"
         Manufacturer="Dust in the Wind"
@@ -118,7 +118,7 @@ NEXT: Product.wxs
 
         <Feature
             Id="ProductFeature"
-            Title="Upgrade Installer"
+            Title="Major Upgrade Demo"
             Level="1">
 
             <ComponentGroupRef Id="FileComponents" />
@@ -134,10 +134,10 @@ Step 6: Build two different versions
 ====================================================================================================
 
 Set the "Product@Version = 1.0.0.0" and build.
-Keep the results in a directory called "UpgradeInstaller v1.0.0.0".
+Keep the results in a directory called "Major Upgrade v1.0.0.0".
 
 Set the "Product@Version = 2.0.0.0" and build.
-Keep the results in a directory called "UpgradeInstaller v2.0.0.0".
+Keep the results in a directory called "Major Upgrade v2.0.0.0".
 
 NEXT: install.bat
 -->
