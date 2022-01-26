@@ -8,7 +8,8 @@ After the first release of our product, most likely, will be other reincarnation
 
 ### a) Tutorial (article)
 
--  TBD
+-  [doc/article/README.md](doc/article/README.md)
+-  This document contains a step-by-step tutorial. You can find there explanations on solving the described problem.
 
 ### b) Code example
 
@@ -25,6 +26,10 @@ After the first release of our product, most likely, will be other reincarnation
 
 - [doc/logs](doc/logs)
 - Sometimes a quick look into the log files may be useful, but running the installer each time is cumbersome. I generated the log files for what I thought are the meaningful scenarios and I placed them into this directory. Have a look when needed.
+
+## Suggestions
+
+Any suggestion or opinion is appreciated. Please, feel free to add a [GitHub Issue](https://github.com/WiX-Toolset-Pills-15mg/Major-Upgrade/issues/new?assignees=&labels=&template=feature_request.md&title=).
 
 ## Donations
 

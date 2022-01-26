@@ -26,7 +26,7 @@ START: Overview
 This project demonstrates how to provide upgrade functionality to a simple installer.
 
 Actually, the WiX project template already includes the upgrade support.
-Let's see
+Let's see how it works.
 
 NEXT: Product.wxs
 
@@ -75,13 +75,13 @@ NEXT: Product.wxs
     NEXT: Product.wxs
     -->
 
-    <Product
-        Id="*"
-        Name="Major Upgrade - WiX Toolset Pill"
-        Language="1033"
-        Version="2.0.0.0"
-        Manufacturer="Dust in the Wind"
-        UpgradeCode="6da0fe4e-4c88-4e10-a39e-dd7a4346de53">
+        <Product
+            Id="*"
+            Name="Major Upgrade - WiX Toolset Pill"
+            Language="1033"
+            Version="1.0.0.0"
+            Manufacturer="Dust in the Wind"
+            UpgradeCode="6da0fe4e-4c88-4e10-a39e-dd7a4346de53">
 
         <Package
             InstallerVersion="200"
