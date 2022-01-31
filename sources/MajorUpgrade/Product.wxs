@@ -2,7 +2,7 @@
 
 <!--
 WiX Toolset Pills 15mg
-Copyright (C) 2019-2021 Dust in the Wind
+Copyright (C) 2019-2022 Dust in the Wind
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@ This project demonstrates how to provide upgrade functionality to a simple insta
 Actually, the WiX project template already includes the upgrade support.
 Let's see how it works.
 
-NEXT: Product.wxs
+NEXT: Product.wxs (DOWN)
 
 -->
 
@@ -45,7 +45,7 @@ NEXT: Product.wxs
     The "Id" attribute uniquely identifies a product and, for each version we must generate a new id,
     that's why we use the "*" to let WiX generate a new id at build time.
     
-    NEXT: Product.wxs
+    NEXT: Product.wxs (DOWN)
     -->
 
     <!--
@@ -58,7 +58,7 @@ NEXT: Product.wxs
     
     Note: The first three values are important.
     
-    NEXT: Product.wxs
+    NEXT: Product.wxs (DOWN)
     -->
 
     <!--
@@ -72,7 +72,7 @@ NEXT: Product.wxs
     Therefore, the "UpgradeCode" must remain the same for all versions of the product. It will never be
     changed.
     
-    NEXT: Product.wxs
+    NEXT: Product.wxs (DOWN)
     -->
 
         <Product
@@ -97,7 +97,7 @@ NEXT: Product.wxs
         new version of the product, the installer will detect that an older version is already installed in
         the system (based on the UpgradeCode) and will uninstall it before installing the new version.
         
-        NEXT: Product.wxs
+        NEXT: Product.wxs (DOWN)
         -->
 
         <!--
@@ -110,7 +110,7 @@ NEXT: Product.wxs
         
         Remove this attribute if downgrade is allowed.
         
-        NEXT: Product.wxs
+        NEXT: Product.wxs (DOWN)
         -->
 
         <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />

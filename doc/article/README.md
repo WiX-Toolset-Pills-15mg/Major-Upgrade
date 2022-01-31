@@ -17,7 +17,7 @@ See the "My First Installer" pill for an example:
 
 - [My First Installer](https://github.com/WiX-Toolset-Pills-15mg/My-First-Installer)
 
-### Step 1: The Product and its Id
+### Step 1: The `Product` and its `Id`
 
 In the context of Windows Installer, a product is a version of our application. Whenever we release a new version of the application, for Windows Installer, that is a new product.
 
@@ -114,9 +114,7 @@ The Product's Id will be generated at build time by WiX Toolset.
 
 Copy the results from the `bin\Release` directory into a new directory. For example `Major Upgrade v2.0.0.0`.
 
-### Step 7: Install and Upgrade
-
-#### a) Install version 1.0.0.0
+### Step 7: Install version 1.0.0.0
 
 Run the `install.bat` script from the `Major Upgrade v1.0.0.0` directory to install version 1.0.0.0.
 
@@ -128,7 +126,7 @@ Look into Control Panel -> Programs and Features to validate that version 1.0.0.
 
 ![Install 1.0.0.0 - Control Panel](install-1.0.0.0-control-panel.png)
 
-#### b) Upgrade to version 2.0.0.0
+### Step 8 - Upgrade to version 2.0.0.0
 
 Run the `install.bat` script from the `Major Upgrade v2.0.0.0` directory to upgrade to version 2.0.0.0.
 
@@ -148,7 +146,7 @@ Look into Control Panel -> Programs and Features to validate that version 2.0.0.
 
 ![Install 2.0.0.0 - Control Panel](upgrade-to-2.0.0.0-control-panel.png)
 
-#### c) Downgrade to version 1.0.0.0
+### Step 9 - Downgrade to version 1.0.0.0
 
 Run the `install.bat` script again from the Major Upgrade v1.0.0.0` directory to attempt a downgrade back to version 1.0.0.0. It will fail.
 

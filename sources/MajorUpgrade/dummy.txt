@@ -1,10 +1,8 @@
-﻿WiX Toolset Pills - Major Upgrade
-==============================================================================
+﻿WiX Toolset Pills 15mg - Major Upgrade
+====================================================================================================
 
-This file is part of the "Major Upgrade" Pill.
-
-The pill demonstrates how to configure the MSI installer to support the major
-upgrade scenario.
+This file is part of the "Major Upgrade" pill.
+The pill demonstrates how to configure the MSI installer to support the major upgrade scenario.
 
 For more details please chech the GitHub repository:
 https://github.com/WiX-Toolset-Pills-15mg/Major-Upgrade
