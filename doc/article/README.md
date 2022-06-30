@@ -2,7 +2,7 @@
 
 ## Description
 
-After the first release of our product, most likely, will be other reincarnations that will need to be deployed. How should we prepare our first installer and how to create our next version of the installer to handle the upgrade process?
+After the first release of our application, most likely, will be other reincarnations that will need to be deployed. How should we prepare our first installer and how to create our next version of the installer to handle the upgrade process?
 
 ## Implementation
 
@@ -19,9 +19,13 @@ See the "My First Installer" pill for an example:
 
 ### Step 1: The `Product` and its `Id`
 
-In the context of Windows Installer, a product is a version of our application. Whenever we release a new version of the application, for Windows Installer, that is a new product.
+In the context of Windows Installer, a product is a major version of our application. Whenever we release a new major version of the application, for Windows Installer, that is a new product.
 
-The `Id` attribute uniquely identifies a product and, for each version we must generate a new id, that's why we use the `"*"` to let WiX generate a new id at build time.
+> **Note**
+>
+> We may release minor upgrades or patches, which does not change the product code.
+
+The `Id` attribute uniquely identifies a product and, for each major version we must generate a new id. If we don't intend to create minor upgrades or patches we may use the `"*"` to let WiX generate a new id at build time.
 
 ```xml
 <Product
@@ -33,7 +37,7 @@ The `Id` attribute uniquely identifies a product and, for each version we must g
 
 The `Version` attribute contains the version number. Each time a new version of our application is released, we must also increment the version number of the installer.
 
-**Note**: The first three values are important.
+> **Note**: Only the first three values are important. The fourth value is ignored by Windows Installer.
 
 ```xml
 <Product
@@ -46,7 +50,7 @@ The `Version` attribute contains the version number. Each time a new version of 
 
 The `UpgradeCode` uniquely identifies our application and Windows Installer will use it to determine if other versions are already present in the system.
 
-Therefore, the `UpgradeCode` must remain the same for all versions of the product. It will never be changed.
+Therefore, the `UpgradeCode` must remain the same for all versions of the application. It will never be changed.
 
 ```xml
 <Product
@@ -58,19 +62,19 @@ Therefore, the `UpgradeCode` must remain the same for all versions of the produc
 
 ### Step 4: The `<MajorUpgrade>` tag
 
-Just by adding the  `<MajorUpgrade>` tag, the installer gains the upgrade support. When installing a new version of the product, the installer will detect that an older version is already installed in the system (based on the `UpgradeCode`) and will uninstall it before installing the new version.
+Just by adding the  `<MajorUpgrade>` tag, the installer gains the upgrade support. When installing a new version of the application, the installer will detect that an older version is already installed in the system (based on the `UpgradeCode`) and will uninstall it before installing the new version.
 
 ```xml
 <MajorUpgrade />
 ```
 
-**Note**: Without this tag, if we attempt an upgrade, the new version will be installed allongside the old version.
+> **Note**: Without this tag, if we attempt an upgrade, the new version will be installed alongside the old version.
 
 ### Step 5: The `DowngradeErrorMessage`
 
 By adding the `DowngradeErrorMessage` attribute, we prevent installing an older version if a newer version is already installer in the system.
 
-Remove this attribute if downgrade is allowed.
+Remove this attribute if you want to allow downgrades.
 
 ```xml
 <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
@@ -94,11 +98,11 @@ Set the version to 1.0.0.0 and build.
 
 The Product's Id will be generated at build time by WiX Toolset.
 
-Copy the results from the `bin\Release` directory into a new directory. For example Major Upgrade v1.0.0.0`.
+Copy the results from the `bin\Release` directory into a new directory. For example `Major Upgrade v1.0.0.0`.
 
 #### Build version 2.0.0.0
 
-Set the version to 1.0.0.0 and build.
+Set the version to 2.0.0.0 and build.
 
 ```xml
 <Product
@@ -110,7 +114,7 @@ Set the version to 1.0.0.0 and build.
     UpgradeCode="6da0fe4e-4c88-4e10-a39e-dd7a4346de53">
 ```
 
-The Product's Id will be generated at build time by WiX Toolset.
+A new Product Id will be generated at build time by WiX Toolset.
 
 Copy the results from the `bin\Release` directory into a new directory. For example `Major Upgrade v2.0.0.0`.
 
@@ -154,7 +158,7 @@ Just like in the upgrade situation, the `FindRelatedProducts` custom action find
 
 ![Downgrade to 1.0.0.0 - FindRelatedProducts](downgrade-to-1.0.0.0-log-find-related-products.png)
 
-Immediatelly after that, the `LaunchConditions` custom action is checking if this is a downgrade and stops the installation:
+Immediately after that, the `LaunchConditions` custom action is checking if this is a downgrade and stops the installation:
 
 ![Downgrade to 1.0.0.0 - LaunchConditions](downgrade-to-1.0.0.0-log-launch-conditions.png)
 

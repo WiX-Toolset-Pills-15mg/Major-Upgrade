@@ -11,27 +11,27 @@ INSTALL (Client Side - install)
 	{
 		INSTALL (Server Side - install)
 		{
-			FindRelatedProducts (Skipping FindRelatedProducts action: already done on client side)
+			FindRelatedProducts (Skip: already done on client side)
 			LaunchConditions
 			ValidateProductID
 			CostInitialize
 			FileCost
 			CostFinalize
-			MigrateFeatureStates (Skipping MigrateFeatureStates action: already done on client side)
+			MigrateFeatureStates (Skip: already done on client side)
 			InstallValidate
 			RemoveExistingProducts
 			{
 				INSTALL (Server Side - uninstall)
 				{
-					FindRelatedProducts (Skipping FindRelatedProducts action: not run in maintenance mode)
+					FindRelatedProducts (Skip: not run in maintenance mode)
 					LaunchConditions
 					ValidateProductID
 					CostInitialize
 					FileCost
 					CostFinalize
-					MigrateFeatureStates (Skipping MigrateFeatureStates action: not run in maintenance mode)
+					MigrateFeatureStates (Skip: not run in maintenance mode)
 					InstallValidate
-					RemoveExistingProducts (Skipping RemoveExistingProducts action: current configuration is maintenance mode or an uninstall)
+					RemoveExistingProducts (Skip: current configuration is maintenance mode or an uninstall)
 					InstallInitialize
 					ProcessComponents
 					UnpublishFeatures
